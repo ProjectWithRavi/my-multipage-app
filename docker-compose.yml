@@ -3,7 +3,7 @@ services:
   web:
     image: your-username/my-vite-react-mpa:latest
     ports:
-      - "3000:3000"
+      - "3000:80"
     environment:
       - NODE_ENV=production
       - VITE_CONTACT_EMAIL=contact@example.com
