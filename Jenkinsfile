@@ -2,21 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'task-manager-app'
-        DOCKER_TAG = "${env.BUILD_NUMBER}"
+        DOCKER_IMAGE = 'my-vite-react-mpa'
+        DOCKER_TAG = "latest"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Checkout code from Git repository
                 git branch: 'main', url: 'https://github.com/your-repo/task-manager.git'
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
             }
         }
 
@@ -28,9 +21,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                // Placeholder for running tests (add your test scripts here)
                 echo 'Running tests (implement test scripts in package.json)'
-                // Example: sh 'npm test'
+                // sh 'npm test'
             }
         }
 
@@ -48,6 +40,12 @@ pipeline {
             steps {
                 sh 'docker-compose down'
                 sh 'docker-compose up -d'
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                sh 'docker system prune -f'
             }
         }
     }
