@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  web:
+    image: your-username/my-vite-react-mpa:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - VITE_CONTACT_EMAIL=contact@example.com
+    volumes:
+      - ./public/images:/app/dist/images
+    restart: unless-stopped
