@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'my-vite-react-mpa'
+        DOCKER_IMAGE = '123rrftg/my-vite-react-mpa'
         DOCKER_TAG = "latest"
     }
 
