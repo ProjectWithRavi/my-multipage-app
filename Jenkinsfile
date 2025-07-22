@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/your-repo/task-manager.git'
+                git branch: 'master', url: 'https://github.com/ProjectWithRavi/my-multipage-app.git'
             }
         }
 
